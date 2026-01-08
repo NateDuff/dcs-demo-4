@@ -1,0 +1,39 @@
+# DCS SEO Configuration v1
+version: 1
+lastUpdated: "2025-01-01T00:00:00Z"
+updatedBy: "system"
+
+# Global/site-wide SEO defaults
+global:
+  siteName: "TechVenture Labs"
+  siteUrl: "https://demo-4.duffcloudservices.com"
+  locale: "en_US"
+  defaultTitle: "TechVenture Labs | Innovation Accelerator"
+  defaultDescription: "Empowering the next generation of tech innovators with funding, mentorship, and resources to build world-changing companies."
+  titleTemplate: "%s | TechVenture Labs"
+  robots: "index, follow"
+  images:
+    og: "/og-image.png"
+    twitter: "/og-image.png"
+  social:
+    twitter: "@techventurelabs"
+    linkedin: "techventurelabs"
+
+# Page-specific SEO configurations
+pages:
+  home:
+    title: "Launch Your Tech Startup"
+    description: "TechVenture Labs accelerates innovation. We provide funding, mentorship, and resources to turn your vision into a thriving business."
+    noTitleTemplate: false
+  about:
+    title: "About Us"
+    description: "Since 2015, we've been on a mission to democratize access to startup resources and help founders build world-changing companies."
+  programs:
+    title: "Our Programs"
+    description: "Three distinct acceleration tracks designed to meet founders where they are and accelerate their journey to success."
+  portfolio:
+    title: "Portfolio Companies"
+    description: "150+ companies building the future. 12 unicorns. $2.3B in follow-on funding."
+  contact:
+    title: "Apply Now"
+    description: "Ready to accelerate your startup? Tell us about your vision and let's explore how we can help."

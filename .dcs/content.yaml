@@ -1,0 +1,49 @@
+# DCS Content Configuration v1
+# Last updated by CMS integration setup
+version: 1
+lastUpdated: "2025-01-01T00:00:00Z"
+updatedBy: "system"
+
+# Global text content shared across all pages
+global:
+  site.name: "TechVenture Labs"
+  site.tagline: "Innovation Accelerator"
+
+# Page-specific text content keyed by page slug
+pages:
+  home:
+    hero.title: "Launch Your Tech Startup"
+    hero.highlight: "Tech Startup"
+    hero.subtitle: "TechVenture Labs accelerates innovation. We provide funding, mentorship, and resources to turn your vision into a thriving business."
+    hero.cta.primary: "Apply to Our Program"
+    hero.cta.secondary: "Learn More"
+    stats.startups: "150+"
+    stats.startups.label: "Startups Launched"
+    stats.funding: "$2.3B"
+    stats.funding.label: "Funding Raised"
+    stats.success: "89%"
+    stats.success.label: "Success Rate"
+    stats.unicorns: "12"
+    stats.unicorns.label: "Unicorns Created"
+    programs.title: "Our Programs"
+    programs.subtitle: "Tailored acceleration tracks to match your startup's stage and needs"
+    stories.title: "Success Stories"
+  about:
+    hero.title: "About TechVenture Labs"
+    hero.subtitle: "Since 2015, we've been on a mission to democratize access to startup resources."
+    story.title: "Our Story"
+    story.content: "Founded by serial entrepreneurs who experienced firsthand the challenges of building a startup without a support network, TechVenture Labs was created to be the launchpad we wished we had."
+  programs:
+    hero.title: "Our Programs"
+    hero.subtitle: "Three distinct acceleration tracks designed to meet founders where they are."
+  portfolio:
+    hero.title: "Portfolio Companies"
+    hero.subtitle: "150+ companies building the future. 12 unicorns. $2.3B in follow-on funding."
+  contact:
+    hero.title: "Apply Now"
+    hero.subtitle: "Ready to accelerate your startup? Tell us about your vision."
+    form.name: "Full Name"
+    form.email: "Email Address"
+    form.company: "Company Name"
+    form.message: "Tell us about your startup"
+    form.submit: "Submit Application"
