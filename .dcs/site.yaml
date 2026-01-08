@@ -1,0 +1,10 @@
+# DCS Site Configuration
+# This file configures the integration between this site and DCS Portal
+
+site_slug: demo-4
+site_name: React Demo Site
+storage_account: stdemositefour
+output_location: dist
+
+# Site hosting (static blob storage for demo sites)
+production_url: https://stdemositefour.z22.web.core.windows.net/
