@@ -108,7 +108,7 @@ export default function Layout() {
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400 text-sm">
             <p>© 2026 TechVenture Labs. All rights reserved.</p>
-            <p className="mt-2 text-xs">Demo Site 4 — Powered by DCS</p>
+            <p className="mt-2 text-xs">Demo Site 4 — Powered by Duff Cloud Services</p>
           </div>
         </div>
       </footer>
