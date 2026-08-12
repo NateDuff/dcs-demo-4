@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useTextContent, useSEO } from '@duffcloudservices/cms-react'
 
 export default function Programs() {
+  const t = useTextContent('programs')
+  useSEO('programs')
+
   const programs = [
     {
       name: 'Seed Accelerator',
@@ -58,17 +62,28 @@ export default function Programs() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900">
+      <section 
+        data-section="hero" 
+        data-section-label="Hero Banner"
+        className="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Programs</h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Three distinct tracks designed to meet founders where they are and accelerate their journey to success.
+          <h1 data-text-key="hero.title" className="text-4xl md:text-5xl font-bold text-white mb-6">
+            {t('hero.title', 'Our Programs')}
+          </h1>
+          <p data-text-key="hero.subtitle" className="text-xl text-slate-300 max-w-3xl mx-auto">
+            {t('hero.subtitle', 'Three distinct tracks designed to meet founders where they are and accelerate their journey to success.')}
           </p>
         </div>
       </section>
 
       {/* Programs Grid */}
-      <section className="py-20">
+      <section 
+        data-section="programs-list" 
+        data-section-label="Programs Details"
+        data-dynamic="true"
+        className="py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {programs.map((program, idx) => (
@@ -107,9 +122,15 @@ export default function Programs() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-slate-800/50">
+      <section 
+        data-section="faq" 
+        data-section-label="Frequently Asked Questions"
+        className="py-20 bg-slate-800/50"
+      >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+          <h2 data-text-key="faq.title" className="text-3xl font-bold text-white text-center mb-12">
+            {t('faq.title', 'Frequently Asked Questions')}
+          </h2>
           <div className="space-y-6">
             {[
               { q: 'When are applications due?', a: 'Applications are reviewed on a rolling basis. Early applications have an advantage as spots fill up quickly.' },

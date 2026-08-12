@@ -8,24 +8,28 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section 
+        data-section="hero" 
+        data-section-label="Hero Banner"
+        className="relative py-20 overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/30 via-slate-900 to-accent-900/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-500/20 via-transparent to-transparent"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-down">
-            {t('hero.title', 'Launch Your ')}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+            <span data-text-key="hero.title">{t('hero.title', 'Launch Your ')}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400" data-text-key="hero.highlight">
               {t('hero.highlight', 'Tech Startup')}
             </span>
           </h1>
-          <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto animate-fade-in-up delay-200">
+          <p data-text-key="hero.subtitle" className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto animate-fade-in-up delay-200">
             {t('hero.subtitle', 'TechVenture Labs accelerates innovation. We provide funding, mentorship, and resources to turn your vision into a thriving business.')}
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up delay-400">
-            <Link to="/contact" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105">
+            <Link to="/contact" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105" data-text-key="hero.cta.primary">
               {t('hero.cta.primary', 'Apply to Our Program')}
             </Link>
-            <Link to="/programs" className="border border-slate-600 hover:border-slate-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105">
+            <Link to="/programs" className="border border-slate-600 hover:border-slate-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105" data-text-key="hero.cta.secondary">
               {t('hero.cta.secondary', 'Learn More')}
             </Link>
           </div>
@@ -33,20 +37,24 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 border-y border-slate-800">
+      <section 
+        data-section="stats" 
+        data-section-label="Statistics"
+        className="py-16 border-y border-slate-800"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: t('stats.startups', '150+'), label: t('stats.startups.label', 'Startups Launched') },
-              { value: t('stats.funding', '$2.3B'), label: t('stats.funding.label', 'Funding Raised') },
-              { value: t('stats.success', '89%'), label: t('stats.success.label', 'Success Rate') },
-              { value: t('stats.unicorns', '12'), label: t('stats.unicorns.label', 'Unicorns Created') },
+              { value: t('stats.startups', '150+'), label: t('stats.startups.label', 'Startups Launched'), key: 'stats.startups' },
+              { value: t('stats.funding', '$2.3B'), label: t('stats.funding.label', 'Funding Raised'), key: 'stats.funding' },
+              { value: t('stats.success', '89%'), label: t('stats.success.label', 'Success Rate'), key: 'stats.success' },
+              { value: t('stats.unicorns', '12'), label: t('stats.unicorns.label', 'Unicorns Created'), key: 'stats.unicorns' },
             ].map((stat, index) => (
               <div key={stat.label} className={`text-center animate-fade-in-up delay-${(index + 1) * 100}`}>
-                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400" data-text-key={stat.key}>
                   {stat.value}
                 </div>
-                <div className="text-slate-400 mt-2">{stat.label}</div>
+                <div className="text-slate-400 mt-2" data-text-key={`${stat.key}.label`}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -54,12 +62,17 @@ export default function Home() {
       </section>
 
       {/* Programs Preview */}
-      <section className="py-20">
+      <section 
+        data-section="programs" 
+        data-section-label="Programs Overview"
+        data-dynamic="true"
+        className="py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4 animate-fade-in">
+          <h2 data-text-key="programs.title" className="text-3xl md:text-4xl font-bold text-white text-center mb-4 animate-fade-in">
             {t('programs.title', 'Our Programs')}
           </h2>
-          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto animate-fade-in delay-100">
+          <p data-text-key="programs.subtitle" className="text-slate-400 text-center mb-12 max-w-2xl mx-auto animate-fade-in delay-100">
             {t('programs.subtitle', 'Tailored acceleration tracks to match your startup\'s stage and needs')}
           </p>
           <div className="grid md:grid-cols-3 gap-8">
@@ -104,9 +117,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-slate-800/50">
+      <section 
+        data-section="testimonials" 
+        data-section-label="Success Stories"
+        className="py-20 bg-slate-800/50"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">
+          <h2 data-text-key="stories.title" className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">
             {t('stories.title', 'Success Stories')}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">

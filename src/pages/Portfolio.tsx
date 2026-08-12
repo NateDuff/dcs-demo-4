@@ -1,4 +1,9 @@
+import { useTextContent, useSEO } from '@duffcloudservices/cms-react'
+
 export default function Portfolio() {
+  const t = useTextContent('portfolio')
+  useSEO('portfolio')
+
   const companies = [
     { name: 'DataFlow Analytics', category: 'Enterprise SaaS', status: 'Series B', raised: '$45M', year: 2019 },
     { name: 'CloudSecure', category: 'Cybersecurity', status: 'Acquired', raised: '$200M exit', year: 2018 },
@@ -20,43 +25,76 @@ export default function Portfolio() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900">
+      <section 
+        data-section="hero" 
+        data-section-label="Hero Banner"
+        className="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Portfolio</h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            150+ companies building the future. 12 unicorns. $2.3B in follow-on funding.
+          <h1 data-text-key="hero.title" className="text-4xl md:text-5xl font-bold text-white mb-6">
+            {t('hero.title', 'Our Portfolio')}
+          </h1>
+          <p data-text-key="hero.subtitle" className="text-xl text-slate-300 max-w-3xl mx-auto">
+            {t('hero.subtitle', '150+ companies building the future. 12 unicorns. $2.3B in follow-on funding.')}
           </p>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="py-8 border-y border-slate-800 bg-slate-800/30">
+      <section 
+        data-section="stats" 
+        data-section-label="Portfolio Statistics"
+        className="py-8 border-y border-slate-800 bg-slate-800/30"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-12">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-400">12</div>
-              <div className="text-slate-400 text-sm">Unicorns</div>
+              <div data-text-key="stats.unicorns" className="text-2xl font-bold text-primary-400">
+                {t('stats.unicorns', '12')}
+              </div>
+              <div data-text-key="stats.unicorns.label" className="text-slate-400 text-sm">
+                {t('stats.unicorns.label', 'Unicorns')}
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-400">89%</div>
-              <div className="text-slate-400 text-sm">Still Active</div>
+              <div data-text-key="stats.active" className="text-2xl font-bold text-primary-400">
+                {t('stats.active', '89%')}
+              </div>
+              <div data-text-key="stats.active.label" className="text-slate-400 text-sm">
+                {t('stats.active.label', 'Still Active')}
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-400">$2.3B</div>
-              <div className="text-slate-400 text-sm">Follow-on Raised</div>
+              <div data-text-key="stats.followon" className="text-2xl font-bold text-primary-400">
+                {t('stats.followon', '$2.3B')}
+              </div>
+              <div data-text-key="stats.followon.label" className="text-slate-400 text-sm">
+                {t('stats.followon.label', 'Follow-on Raised')}
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-400">15</div>
-              <div className="text-slate-400 text-sm">Exits</div>
+              <div data-text-key="stats.exits" className="text-2xl font-bold text-primary-400">
+                {t('stats.exits', '15')}
+              </div>
+              <div data-text-key="stats.exits.label" className="text-slate-400 text-sm">
+                {t('stats.exits.label', 'Exits')}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Companies Grid */}
-      <section className="py-20">
+      <section 
+        data-section="companies" 
+        data-section-label="Featured Companies"
+        data-dynamic="true"
+        className="py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Featured Companies</h2>
+          <h2 data-text-key="companies.title" className="text-2xl font-bold text-white mb-8">
+            {t('companies.title', 'Featured Companies')}
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {companies.map((company) => (
               <div key={company.name} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-primary-500/50 transition-colors">
@@ -83,9 +121,16 @@ export default function Portfolio() {
       </section>
 
       {/* Notable Exits */}
-      <section className="py-20 bg-slate-800/50">
+      <section 
+        data-section="exits" 
+        data-section-label="Notable Exits"
+        data-dynamic="true"
+        className="py-20 bg-slate-800/50"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Notable Exits</h2>
+          <h2 data-text-key="exits.title" className="text-2xl font-bold text-white mb-8">
+            {t('exits.title', 'Notable Exits')}
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {exits.map((exit) => (
               <div key={exit.company} className="bg-slate-900 border border-slate-700 rounded-xl p-6">
