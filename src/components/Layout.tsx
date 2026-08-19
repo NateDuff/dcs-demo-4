@@ -10,6 +10,20 @@ export default function Layout() {
     <div className="min-h-screen bg-slate-900">
       {/* Navigation */}
       <nav className="bg-slate-800/50 backdrop-blur-lg border-b border-slate-700 sticky top-0 z-50">
+        {/*
+          C-486 §9.5 step 2 — fictional-demo disclosure.
+          Deliberately NOT instrumented with data-text-key: this is a compliance
+          statement, not managed content, and must not be editable or removable
+          from the visual editor. It lives inside the sticky nav so it stays
+          visible on every route and at every scroll position.
+        */}
+        <div
+          data-demo-disclosure
+          className="bg-amber-400 text-slate-900 text-center text-xs sm:text-sm font-medium px-4 py-2"
+        >
+          Demonstration site — this business is fictional. Built by{' '}
+          <a href="https://duffcloudservices.com" className="underline hover:no-underline">Duff Cloud Services</a>.
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
