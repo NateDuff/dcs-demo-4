@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@duffcloudservices/cms-react':
-        specifier: ^0.1.1
-        version: 0.1.1(react@18.3.1)
+        specifier: ^0.4.4
+        version: 0.4.4(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -135,11 +135,11 @@ packages:
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
-  '@duffcloudservices/cms-core@0.1.1':
-    resolution: {integrity: sha512-sA9ycTstJkh11jj1vshY1jK/YCbJA9r6WR5FFrqNU8XyHR/cc/RCxM5cxxM8MdzVgLHSNG4PsYLDv36vBd8Qiw==}
+  '@duffcloudservices/cms-core@0.8.4':
+    resolution: {integrity: sha512-4WnO934g8VhhQjGc+IUB/ffmsC7OPylCP/T5Q50ts9ZiVqy4q+d7i1U8BjuBzWRLiVDyhO+RGPdE+qlyaRleBw==}
 
-  '@duffcloudservices/cms-react@0.1.1':
-    resolution: {integrity: sha512-xwIjF+9bG1GJOgSEK8BQNFp26XsxluBpTeeMlxHLdOyUz1lOH1aSIoXmCFBgxE4aNYXqXW/4VI7ImFyjDvvQ+w==}
+  '@duffcloudservices/cms-react@0.4.4':
+    resolution: {integrity: sha512-E31UaPR4W55B7tgPz2CHHoAApejKAdABnJmbn+q2gEq/drAxnXUMYRW1GgnNX8ULhsHAS4riuYB5G9+YpIGDqg==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -1067,13 +1067,13 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@duffcloudservices/cms-core@0.1.1':
+  '@duffcloudservices/cms-core@0.8.4':
     dependencies:
       js-yaml: 4.1.1
 
-  '@duffcloudservices/cms-react@0.1.1(react@18.3.1)':
+  '@duffcloudservices/cms-react@0.4.4(react@18.3.1)':
     dependencies:
-      '@duffcloudservices/cms-core': 0.1.1
+      '@duffcloudservices/cms-core': 0.8.4
       react: 18.3.1
 
   '@esbuild/aix-ppc64@0.25.12':
